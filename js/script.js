@@ -15,21 +15,45 @@
   const navLinks = document.querySelectorAll('.nav-links li');
 
   window.addEventListener('scroll', () => {
-    let current = '';
+  let current = '';
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(li => {
-      li.classList.remove('active');
-      const a = li.querySelector('a');
-      if (a.getAttribute('href') === `#${current}`) {
-        li.classList.add('active');
-      }
-    });
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute('id');
+    }
   });
+
+  navLinks.forEach(li => {
+    li.classList.remove('active');
+    const a = li.querySelector('a');
+    if (a.id === current+"-btn") {
+      li.classList.add('active');
+    }
+  });
+});
+
+
+
+  function scrollToTop(){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+const homeBtn = document.getElementById('home-btn')
+const aboutBtn = document.getElementById('about-btn')
+const aboutSection = document.getElementById('about')
+
+
+homeBtn.addEventListener('click', e => {
+  scrollToTop()  
+})
+
+aboutBtn.addEventListener('click', e => {
+  aboutSection.scrollIntoView({
+    behavior: "smooth"
+  })
+})
