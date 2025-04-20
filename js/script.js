@@ -57,3 +57,15 @@ aboutBtn.addEventListener('click', e => {
     behavior: "smooth"
   })
 })
+
+const scrollToTopBtn = document.querySelector('.scroll-to-top')
+
+window.addEventListener("scroll", () => {
+  const aboutTop = aboutSection.offsetTop;
+
+  if (window.scrollY >= aboutTop - 100) {
+    scrollToTopBtn.style.opacity = "1";
+  } else {
+    scrollToTopBtn.style.opacity = "0";
+  }
+});

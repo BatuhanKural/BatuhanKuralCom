@@ -214,15 +214,18 @@ nav {
     color: #0d71cf;
 }
 
-.scroll-to-top{
-    position: absolute;
-    right: 15px;
-    bottom: -85px;
+.scroll-to-top {
+    position: fixed;
+    opacity: 0;
+    right: 5px;
+    bottom: 0;
     background-color: #0d71cf;
     padding: 20px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-to-top i{
@@ -358,10 +361,6 @@ nav {
     .lists li {
         margin-top: 20px;
     }
-
-    .scroll-to-top{
-        bottom: -1050px;
-    }
 }
 
 @media screen and (max-width: 607px) {
@@ -370,9 +369,6 @@ nav {
     }
     #about-content p {
         font-size:  1.35rem;
-    }
-    .scroll-to-top{
-        bottom: -600px;
     }
 }
 
@@ -396,3 +392,55 @@ nav {
         font-size: 1rem;
     }
 }
+
+@media screen and (max-width: 440px) {
+    .scroll-to-top{
+        padding: 10px;
+    }
+    .scroll-to-top i{
+        font-size: 10px;
+    }
+    #about-content p{
+        margin-top: 30px;
+    }
+    #about-content{
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 440px) and (min-width: 379px){
+    #about-content li {
+        font-size: 16px
+    }
+    #about-content p{
+        font-size: 1rem;
+    }
+    #about-content h2{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 378px) and (min-width: 349px){
+    #about-content li {
+        font-size: 14px
+    }
+    #about-content p{
+        font-size: 0.9rem;
+    }
+    #about-content h2{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 348px){
+    #about-content li {
+        font-size: 12px
+    }
+    #about-content p{
+        font-size: 0.7rem;
+    }
+    #about-content h2{
+        font-size: 0.95rem;
+    }
+}
+
