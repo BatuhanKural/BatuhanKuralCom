@@ -233,3 +233,166 @@ nav {
 #home-btn, #about-btn{
     cursor: pointer;
 }
+
+@media screen and (max-width: 1898px) {
+    aside {
+        display: none;
+    }
+
+    #home,
+    #about {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1898px) and (min-width: 1450px) {
+    #about-card {
+        column-gap: 150px;
+    }
+}
+
+@media screen and (max-width: 1339px) and (min-width: 1263px) {
+    .lists {
+        column-gap: 100px;
+    }
+}
+
+@media screen and (max-width: 1262px) and (min-width: 1210px) {
+    .lists{
+        column-gap: 50px
+    }
+}
+
+@media screen and (max-width: 1209px) and (min-width: 1151px){
+    .lists{
+        column-gap: 70px;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 1209px) {
+    #about-card img{
+        width: 250px;
+    }
+
+    .lists{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 1150px) and (min-width: 1080px) {
+    #about-content{
+        font-size: 1rem;
+    }
+    
+    .lists{
+        column-gap: 70px
+    }
+    
+    #about-card{
+        margin-top: -30px;
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    #home-content h1{
+        font-size: 6rem;
+        font-weight: 700;
+    }
+
+    #home-content p{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1079px) and (min-width: 1050px){
+    .lists{
+        column-gap: 40px;
+    }
+
+    #about-content p{
+        font-size: 1.6rem;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 1049px) and (min-width: 970px) {
+    #about-content p{
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    #about-card{
+        margin-top: 80px;
+    }
+    
+    .lists{
+        column-gap: 40px;
+    }
+
+    .lists li {
+        font-size: 17px;
+    }
+}
+
+
+@media screen and (max-width: 970px){
+    #about-card{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about-content{
+        padding-bottom: 20px
+    }
+
+    #about-card img{
+        width: 100%;
+    }
+
+    .lists{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .lists li {
+        margin-top: 20px;
+    }
+
+    .scroll-to-top{
+        bottom: -1050px;
+    }
+}
+
+@media screen and (max-width: 607px) {
+    #about-content h2{
+        font-size: 2rem;
+    }
+    #about-content p {
+        font-size:  1.35rem;
+    }
+    .scroll-to-top{
+        bottom: -600px;
+    }
+}
+
+@media screen and (max-width: 740px) and (min-width: 520px){
+    #home-content h1 {
+        font-size: 4rem
+    }
+    }
+
+@media screen and (max-width: 740px){
+    #home-content p{
+        font-size: 1.33rem;
+    }
+}
+
+@media screen and (max-width: 519px) {
+    #home-content h1 {
+        font-size: 2.7rem
+    }
+    #home-content p{
+        font-size: 1rem;
+    }
+}
