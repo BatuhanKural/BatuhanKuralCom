@@ -26,10 +26,10 @@
   });
 
   navLinks.forEach(li => {
-    li.classList.remove('active');
+    li.classList.remove('active-section');
     const a = li.querySelector('a');
     if (a.id === current+"-btn") {
-      li.classList.add('active');
+      li.classList.add('active-section');
     }
   });
 });
@@ -41,6 +41,7 @@
       top: 0,
       behavior: 'smooth'
     })
+    closeSideBar()
   }
 
 const homeBtn = document.getElementById('home-btn')
@@ -60,6 +61,7 @@ aboutBtn.addEventListener('click', e => {
 
 const scrollToTopBtn = document.querySelector('.scroll-to-top')
 
+
 window.addEventListener("scroll", () => {
   const aboutTop = aboutSection.offsetTop;
 
@@ -69,3 +71,35 @@ window.addEventListener("scroll", () => {
     scrollToTopBtn.style.opacity = "0";
   }
 });
+
+
+const openSidebarBtn = document.getElementById('open-sidebar-btn')
+const sideBar = document.querySelector('aside')
+const sidebarBtnIcon = document.querySelector('#open-sidebar-btn > i')
+const overlay = document.getElementById('overlay');
+
+function openSidebar(){
+  const isOpen = sideBar.classList.toggle('active');
+  overlay.classList.toggle('active');
+  document.body.classList.toggle('no-scroll');
+  sidebarBtnIcon.classList.replace(isOpen ? 'fa-bars' : 'fa-xmark', isOpen ? 'fa-xmark' : 'fa-bars');
+}
+
+function closeSideBar(){
+  sideBar.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.classList.remove('no-scroll');
+  sidebarBtnIcon.classList.replace('fa-xmark', 'fa-bars')
+}
+
+openSidebarBtn.addEventListener('click', openSidebar)
+
+
+overlay.addEventListener('click', closeSideBar);
+
+
+const navLinkList = document.querySelectorAll('.nav-links > li > a')
+
+navLinkList.forEach(navLink => {
+  navLink.addEventListener('click', closeSideBar)
+})

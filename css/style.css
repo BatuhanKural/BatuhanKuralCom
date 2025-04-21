@@ -5,6 +5,41 @@
     user-select: none;
 }
 
+body.no-scroll {
+    overflow: hidden;
+  }
+
+#open-sidebar-btn{
+    position: fixed;
+    opacity: 0;
+    right: 20px;
+    top: 10px;
+    background-color: #0d71cf;
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#open-sidebar-btn i{
+    color: #fff;
+    font-size: 20px;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0; /* top: 0; left: 0; right: 0; bottom: 0; */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  #overlay.active {
+    display: block;
+  }
+
 aside{
     position: fixed;
     width: 560px;
@@ -92,11 +127,11 @@ nav {
     color: #0d71cf;
 }
 
-.active a i{
+.active-section a i{
     color: #0d71cf;
 }
 
-.active a{
+.active-section a{
     color: #fff;
 }
 
@@ -217,7 +252,7 @@ nav {
 .scroll-to-top {
     position: fixed;
     opacity: 0;
-    right: 5px;
+    right: 20px;
     bottom: 0;
     background-color: #0d71cf;
     padding: 20px;
@@ -239,12 +274,22 @@ nav {
 
 @media screen and (max-width: 1898px) {
     aside {
-        display: none;
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+        z-index: 1000;
+    }
+
+    aside.active{
+        transform: translateX(0);
     }
 
     #home,
     #about {
         margin-left: 0;
+    }
+
+    #open-sidebar-btn{
+        opacity: 1;
     }
 }
 
@@ -394,12 +439,6 @@ nav {
 }
 
 @media screen and (max-width: 440px) {
-    .scroll-to-top{
-        padding: 10px;
-    }
-    .scroll-to-top i{
-        font-size: 10px;
-    }
     #about-content p{
         margin-top: 30px;
     }
@@ -444,3 +483,18 @@ nav {
     }
 }
 
+  
+@media screen and (max-width: 720px) {
+    aside {
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    .profile-card h1{
+        font-size: 2rem;
+    }
+    aside {
+        width: 70%;
+      }
+  }
