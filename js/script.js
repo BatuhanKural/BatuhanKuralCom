@@ -1,6 +1,6 @@
   // I'm kısımı
   var options = {
-    strings: ["Frontend Developer", "Web Developer", "JavaScript Enthusiast"],
+    strings: ["Frontend Developer", "Web Developer", "JavaScript Enthusiast", "React Developer"],
     typeSpeed: 50,
     backSpeed: 30,
     backDelay: 1000,
